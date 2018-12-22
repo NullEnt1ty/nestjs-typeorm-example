@@ -1,3 +1,4 @@
+import yaml from 'js-yaml';
 import nconf from 'nconf';
 
 export class ConfigService {
@@ -5,7 +6,14 @@ export class ConfigService {
   public load(): void {
     nconf.argv()
       .env({separator: '_'})
-      .file({file: `${ROOT_DIR}/config/${this.configFilename}`, search: true});
+      .file({
+        file: `${ROOT_DIR}/config/${this.configFilename}`,
+        search: true,
+        format: {
+          parse: yaml.safeLoad,
+          stringify: yaml.safeDump,
+        },
+      });
   }
 
   // tslint:disable-next-line:no-any
@@ -38,10 +46,10 @@ export class ConfigService {
     const nodeEnv = process.env.NODE_ENV;
 
     if (nodeEnv === 'production') {
-      return 'config.prod.json';
+      return 'config.prod.yaml';
     }
 
-    return 'config.dev.json';
+    return 'config.dev.yaml';
   }
 
 }
