@@ -14,6 +14,9 @@ DOCKER_IMAGE_NAME="mariadb"
 DOCKER_CONTAINER_NAME="nest-mysql"
 
 MYSQL_ROOT_PASSWORD="root"
+MYSQL_DATABASE_NAME="nestjs_typeorm_example"
+MYSQL_DATABASE_USERNAME="nestjs_admin"
+MYSQL_DATABASE_PASSWORD="nestjs_admin"
 
 # execution
 
@@ -45,6 +48,9 @@ echo "No container with name '$DOCKER_CONTAINER_NAME' was found. Creating contai
 
 docker run --name "$DOCKER_CONTAINER_NAME" \
   --env MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD" \
+  --env MYSQL_DATABASE="$MYSQL_DATABASE_NAME" \
+  --env MYSQL_USER="$MYSQL_DATABASE_USERNAME" \
+  --env MYSQL_PASSWORD="$MYSQL_DATABASE_PASSWORD" \
   --publish 127.0.0.1:3306:3306 \
   --detach \
   "$DOCKER_IMAGE_NAME"
