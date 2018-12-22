@@ -5,18 +5,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './modules/user';
 
+const databaseConfig = CONFIG.get('database');
+const typeOrmConfig = Object.assign(databaseConfig, {
+  entities: [__dirname + '/**/*.entity{.ts,.js}'],
+  synchronize: true,
+});
+
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mariadb',
-      host: 'localhost',
-      port: 3306,
-      username: 'nestjs_admin',
-      password: 'nestjs_admin',
-      database: 'nestjs_typeorm_example',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
-    }),
+    TypeOrmModule.forRoot(typeOrmConfig),
     UserModule,
   ],
   controllers: [AppController],
