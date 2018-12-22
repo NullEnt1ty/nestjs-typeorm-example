@@ -30,3 +30,6 @@ dist/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Config
+config/config.dev.json
