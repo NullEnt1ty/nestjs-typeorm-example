@@ -7,7 +7,14 @@ import { ConfigService } from './config.service';
 
 global.ROOT_DIR = path.join(__dirname, '..');
 global.CONFIG = new ConfigService();
-CONFIG.load();
+
+try {
+  CONFIG.load();
+} catch (error) {
+  // tslint:disable-next-line:no-console
+  console.error(error.message);
+  process.exit(1);
+}
 
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';

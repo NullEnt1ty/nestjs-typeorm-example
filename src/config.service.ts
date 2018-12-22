@@ -1,13 +1,21 @@
+import fs from 'fs';
 import yaml from 'js-yaml';
 import nconf from 'nconf';
 
 export class ConfigService {
 
   public load(): void {
+    const pathToConfigFile = `${ROOT_DIR}/config/${this.configFilename}`;
+    const configFileDoesNotExist = fs.existsSync(pathToConfigFile) === false;
+
+    if (configFileDoesNotExist) {
+      throw new Error(`Config file at '${pathToConfigFile}' does not exist.`);
+    }
+
     nconf.argv()
       .env({separator: '_'})
       .file({
-        file: `${ROOT_DIR}/config/${this.configFilename}`,
+        file: pathToConfigFile,
         search: true,
         format: {
           parse: yaml.safeLoad,
