@@ -24,8 +24,7 @@
     "nconf": "^0.10.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.2.2",
-    "typescript": "^3.0.1"
+    "rxjs": "^6.2.2"
   },
   "devDependencies": {
     "@nestjs/testing": "^5.1.0",
@@ -42,7 +41,8 @@
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.5.0",
     "tslint": "^5.12.0",
-    "tslint-config-5minds": "^1.0.6"
+    "tslint-config-5minds": "^1.0.6",
+    "typescript": "^3.0.1"
   },
   "jest": {
     "moduleFileExtensions": [
