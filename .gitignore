@@ -33,3 +33,6 @@ dist/
 
 # Config
 config/config.dev.json
+
+# Test results
+coverage/
