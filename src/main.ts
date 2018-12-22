@@ -9,6 +9,7 @@ global.ROOT_DIR = path.join(__dirname, '..');
 global.CONFIG = new ConfigService();
 CONFIG.load();
 
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -16,6 +17,7 @@ async function bootstrap(): Promise<void> {
   const port = 3000;
 
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
   await app.listen(port);
 }
 bootstrap();
