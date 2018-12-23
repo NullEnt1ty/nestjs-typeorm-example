@@ -10,6 +10,6 @@ export class RegisterUserDto {
 
   @IsString()
   @IsOptional()
-  public readonly aboutMe?: string;
+  public readonly aboutMe: string | null | undefined;
 
 }

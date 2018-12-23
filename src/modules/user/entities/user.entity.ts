@@ -17,6 +17,6 @@ export class User {
     type: 'text',
     nullable: true,
   })
-  public aboutMe: string;
+  public aboutMe: string | null;
 
 }

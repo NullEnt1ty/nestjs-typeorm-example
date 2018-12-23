@@ -13,6 +13,6 @@ export class UserDto {
   public lastName: string;
 
   @Expose()
-  public aboutMe?: string;
+  public aboutMe: string | null;
 
 }

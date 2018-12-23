@@ -21,7 +21,8 @@
     "typeRoots": [
       "./typings",
       "./node_modules/@types"
-    ]
+    ],
+    "strictNullChecks": true
   },
   "exclude": ["node_modules"]
 }
