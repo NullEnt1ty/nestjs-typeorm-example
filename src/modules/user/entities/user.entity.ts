@@ -7,6 +7,21 @@ export class User {
   @Generated('uuid')
   public id: string;
 
+  @Column({
+    unique: true,
+  })
+  public username: string;
+
+  @Column({
+    unique: true,
+  })
+  public email: string;
+
+  @Column({
+    select: false,
+  })
+  public password: string;
+
   @Column()
   public firstName: string;
 

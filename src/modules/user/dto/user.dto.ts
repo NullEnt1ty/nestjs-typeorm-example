@@ -7,6 +7,14 @@ export class UserDto {
   public id: string;
 
   @Expose()
+  public username: string;
+
+  @Expose()
+  public email: string;
+
+  public password: string;
+
+  @Expose()
   public firstName: string;
 
   @Expose()
