@@ -12,4 +12,7 @@ export class UserDto {
   @Expose()
   public lastName: string;
 
+  @Expose()
+  public aboutMe?: string;
+
 }

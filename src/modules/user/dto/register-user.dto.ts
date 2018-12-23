@@ -1,4 +1,4 @@
-import { IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class RegisterUserDto {
 
@@ -7,5 +7,9 @@ export class RegisterUserDto {
 
   @IsString()
   public readonly lastName: string;
+
+  @IsString()
+  @IsOptional()
+  public readonly aboutMe?: string;
 
 }

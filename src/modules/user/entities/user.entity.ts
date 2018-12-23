@@ -13,4 +13,10 @@ export class User {
   @Column()
   public lastName: string;
 
+  @Column({
+    type: 'text',
+    nullable: true,
+  })
+  public aboutMe: string;
+
 }
