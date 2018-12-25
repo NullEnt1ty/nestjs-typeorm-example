@@ -1,10 +1,9 @@
 import { ConflictException, Inject, Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 
 import { AUTH_SERVICE, IAuthService } from '../auth';
+import { USER_REPOSITORY } from './constants';
 import { IUserRepository, IUserService } from './contracts';
 import { RegisterUserDto, UserDto } from './dto';
-import { UserRepository } from './repositories';
 
 @Injectable()
 export class UserService implements IUserService {
@@ -12,7 +11,7 @@ export class UserService implements IUserService {
   private userRepository: IUserRepository;
   private authService: IAuthService;
 
-  constructor(@InjectRepository(UserRepository) userRepository: IUserRepository,
+  constructor(@Inject(USER_REPOSITORY) userRepository: IUserRepository,
               @Inject(AUTH_SERVICE) authService: IAuthService) {
     this.userRepository = userRepository;
     this.authService = authService;
