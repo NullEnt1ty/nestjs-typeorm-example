@@ -83,13 +83,14 @@ describe('UserService', () => {
       email: 'john.doe@example.com',
       firstName: 'John',
       lastName: 'Doe',
+      password: 'secret',
       username: 'johndoe',
     };
 
-    jest.spyOn(userRepository, 'createUser').mockReturnValue(createdUser);
-    jest.spyOn(userRepository, 'findUserByEmail').mockReturnValue(undefined);
-    jest.spyOn(userRepository, 'findUserByUsername').mockReturnValue(undefined);
-    jest.spyOn(authService, 'hashPassword').mockReturnValue('password hash');
+    jest.spyOn(userRepository, 'createUser').mockReturnValue(Promise.resolve(createdUser));
+    jest.spyOn(userRepository, 'findUserByEmail').mockReturnValue(Promise.resolve(undefined));
+    jest.spyOn(userRepository, 'findUserByUsername').mockReturnValue(Promise.resolve(undefined));
+    jest.spyOn(authService, 'hashPassword').mockReturnValue(Promise.resolve('password hash'));
 
     expect(await userService.signUp(userToBeCreated)).toBe(createdUser);
   });
@@ -109,10 +110,11 @@ describe('UserService', () => {
       email: 'john.doe@example.com',
       firstName: 'John',
       lastName: 'Doe',
+      password: 'secret',
       username: 'johndoe',
     };
 
-    jest.spyOn(userRepository, 'findUserByUsername').mockReturnValue(existingUser);
+    jest.spyOn(userRepository, 'findUserByUsername').mockReturnValue(Promise.resolve(existingUser));
 
     try {
       await userService.signUp(userToBeCreated);
@@ -138,11 +140,12 @@ describe('UserService', () => {
       email: 'john.doe@example.com',
       firstName: 'John',
       lastName: 'Doe',
+      password: 'secret',
       username: 'user123',
     };
 
-    jest.spyOn(userRepository, 'findUserByUsername').mockReturnValue(undefined);
-    jest.spyOn(userRepository, 'findUserByEmail').mockReturnValue(existingUser);
+    jest.spyOn(userRepository, 'findUserByUsername').mockReturnValue(Promise.resolve(undefined));
+    jest.spyOn(userRepository, 'findUserByEmail').mockReturnValue(Promise.resolve(existingUser));
 
     try {
       await userService.signUp(userToBeCreated);
