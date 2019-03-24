@@ -1,0 +1,11 @@
+language: node_js
+os:
+  - linux
+dist: xenial
+node_js:
+  - "lts/*"
+  - node
+install:
+  - npm install
+script:
+  - npm test
