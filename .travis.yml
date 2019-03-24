@@ -9,6 +9,7 @@ install:
   - npm install
 script:
   - npm test
+  - sonar-scanner
 addons:
   sonarcloud:
     organization: nullent1ty-github
