@@ -9,3 +9,8 @@ install:
   - npm install
 script:
   - npm test
+addons:
+  sonarcloud:
+    organization: nullent1ty-github
+    token:
+      secure: "VoXcoVDJTqp/+cCol3mAi/sQT32klsiLHMVQviGja+1xr2WiSbUj2CypeBqf3soKYyupve2l8WPU51fhLE/RIEn6Lj2uq96S//hvYm2H6OC2vq9FuODqv/2jCSELFyt+/8AB/9xdDi7bPbcxPHkUwbCMtoBs898uKOohCNP+/4CwWAOwYa5fDZk/bp41kcg5b6ci40Gf2RsjO3ZU9lHEz2xzwPVDgD3n5FUwJ/H+E+4mDCZbLgyAqwQXGX+r6iI+EwnGgYhjWvrHO+yCjCGr/whHUikWI56WoT+/0jLaClKYV2jYSiA+McjDKTRaztQWGCE1Yv6j03k9q66OihtA3Ji2Qq0iObArd4qT95lxQ8YlMW94JXelJZGvtQnJNKobiejnp2NVcXLptk+XIiOStGfeJGwoWQnjIcMJdC/yd+86Ko/gHacvj5dKBsrw7VKqqfelf9jJLtQlT/4fjk5+hGLvaHnqewGXlXNXXLVk4F0pZeYPuEd+eHdcgkmsRPbYdeiMpqBNqTOyHdg/Qaw1K4ozkxOrTr0svcnws93KRR3bDbqQBcAZj+BzqfyxGje0SRKUq/GPGDOXGG/MjksYkreJ3MUDX/NfMQqaZHk9KlfMPsfoO/zrd8V76Tt857UkAEpfIDjUJ+fIdstNZgIXvCrmoWKgEvDeuEvo4iTrJlI="
