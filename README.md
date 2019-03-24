@@ -1,6 +1,7 @@
 # NestJS + TypeORM Example
 
 [![Build status badge](https://travis-ci.com/NullEnt1ty/nestjs-typeorm-example.svg?branch=master)](https://travis-ci.com/NullEnt1ty/nestjs-typeorm-example)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NullEnt1ty_nestjs-typeorm-example&metric=alert_status)](https://sonarcloud.io/dashboard?id=NullEnt1ty_nestjs-typeorm-example)
 
 ## Installation
 
