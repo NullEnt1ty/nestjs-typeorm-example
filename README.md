@@ -1,5 +1,7 @@
 # NestJS + TypeORM Example
 
+[![Build status badge](https://travis-ci.com/NullEnt1ty/nestjs-typeorm-example.svg?branch=master)](https://travis-ci.com/NullEnt1ty/nestjs-typeorm-example)
+
 ## Installation
 
 ```bash
